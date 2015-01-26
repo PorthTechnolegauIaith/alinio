@@ -1,23 +1,33 @@
-#  GUIs:
+# Alinio
 
-* LF Align ar Windows
-* Dim byd ar gyfer 'nix
+Er mwyn alinio testunau Cymraeg a Saesneg, rydym yn awgrymu i chi defnyddio [hunalign](http://mokk.bme.hu/en/resources/hunalign/).
+Os oes well gennych chi defnyddio rhaglen gyda rhyngwyneb, mae [LF Aligner](http://aligner.sourceforge.net/) yn opsiwn da ar gyfer Windows.
+
+Cyn cychwyn alinio, bydd angen 4 peth:
+
+* Gosodiad o hunalign (neu LF Aligner) ar eich peiriant
+* Testun Cymraeg wedi'i segmentu^
+* Testun Saesneg wedi'i segmentu^
+* Ffeil `.dic` ar gyfer hunalign rydym yn darparu
+
+Ar ôl cael y pedwar peth yma at eu gilydd, mae modd i chi alinio.
+
+^Ar gyfer segmentu eich testunau, rydym yn awgrymu i chi defnyddio'r offer '[Natural Language Toolkit](http://www.nltk.org/)' (NLTK). Os nad ydych chi'n gyfforddus efo ysgrifennu cod Python, mae modd i chi defnyddio system ar-lein '[TextAnalysisOnline](http://textanalysisonline.com/nltk-sentence-segmentation)' i segmentu'ch testunau.
 
 
-# Hunalign Dics
+# Aligning
 
-Format:
+In order to align Welsh and English texts, we recommend you use [hunalign](http://mokk.bme.hu/en/resources/hunalign/).
+If you prefer a programme with a graphical interface, [LF Aligner](http://aligner.sourceforge.net/) is a good option for Windows.
 
-Ffeil testun gyda un term/brawddeg i pob llinell
-Mae'n bosib defnyddio 'stems' neu brawddegau
+Before starting your alignment, you need 4 things:
 
+* An installation of hunalign (or LF Aligner) on your machine
+* Welsh text that has been segmented^
+* English text that has been segmented^
+* A `.dic` file used by hunalign which we distribute
 
-**cy-en.dic**
-*(noder: mae enw'r ffeil yn cy-en ond mae'r llinellau wedi'u 
-fformatio 'cy @ en'. Mae hyn yn bwrpasol - byg yn hunalign)*
+After collecting these for things, you are ready to start aligning your text.
 
-```
-english @ welsh # gair
--phy @ -aeth # geography @ daearyddiaeth 
-swimming in the sea @ nofio yn y môr # brawddeg
-```
+^To segment your text, we suggest you use the '[Natural Language Toolkit](http://www.nltk.org/)' (NLTK). If you are not comfortable with writing Python code, you can use the online system '[TextAnalysisOnline](http://textanalysisonline.com/nltk-sentence-segmentation)' to segment your texts
+
