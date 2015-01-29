@@ -5,14 +5,14 @@ Os oes well gennych chi defnyddio rhaglen gyda rhyngwyneb, mae [LF Aligner](http
 
 Cyn cychwyn alinio, bydd angen 4 peth:
 
-* Gosodiad o hunalign (neu LF Aligner) ar eich peiriant
+* Gosodiad hunalign (neu LF Aligner) ar eich peiriant
 * Testun Cymraeg wedi'i segmentu^
 * Testun Saesneg wedi'i segmentu^
-* Ffeil `.dic` ar gyfer hunalign rydym yn darparu
+* Ffeil `.dic` ar gyfer hunalign a ddarparir gennym ni
 
-Ar ôl cael y pedwar peth yma at eu gilydd, mae modd i chi alinio.
+Ar ôl dod a'r pedwar peth yma at eu gilydd, mae modd i chi alinio.
 
-^Ar gyfer segmentu eich testunau, rydym yn awgrymu i chi defnyddio'r offer '[Natural Language Toolkit](http://www.nltk.org/)' (NLTK). Os nad ydych chi'n gyfforddus efo ysgrifennu cod Python, mae modd i chi defnyddio system ar-lein '[TextAnalysisOnline](http://textanalysisonline.com/nltk-sentence-segmentation)' i segmentu'ch testunau.
+^Ar gyfer segmentu eich testunau, rydym yn awgrymu eich bod chi'n defnyddio'r offer '[Natural Language Toolkit](http://www.nltk.org/)' (NLTK). Os nad ydych chi'n gyfforddus yn ysgrifennu cod Python, mae modd i chi ddefnyddio system ar-lein '[TextAnalysisOnline](http://textanalysisonline.com/nltk-sentence-segmentation)' i segmentu'ch testunau.
 
 
 # Aligning
