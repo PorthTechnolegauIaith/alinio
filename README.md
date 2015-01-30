@@ -1,18 +1,18 @@
 # Alinio
 
-Er mwyn alinio testunau Cymraeg a Saesneg, rydym yn awgrymu i chi defnyddio [hunalign](http://mokk.bme.hu/en/resources/hunalign/).
-Os oes well gennych chi defnyddio rhaglen gyda rhyngwyneb, mae [LF Aligner](http://aligner.sourceforge.net/) yn opsiwn da ar gyfer Windows.
+Er mwyn alinio testunau Cymraeg a Saesneg, rydym yn awgrymu eich bod chi'n defnyddio [hunalign](http://mokk.bme.hu/en/resources/hunalign/).
+Os oes well gennych chi ddefnyddio rhaglen gyda rhyngwyneb, mae [LF Aligner](http://aligner.sourceforge.net/) yn ddewis da ar gyfer Windows.
 
 Cyn cychwyn alinio, bydd angen 4 peth:
 
-* Gosodiad hunalign (neu LF Aligner) ar eich peiriant
+* Gosod Hunalign (neu LF Aligner) ar eich peiriant
 * Testun Cymraeg wedi'i segmentu^
 * Testun Saesneg wedi'i segmentu^
 * Ffeil `.dic` ar gyfer hunalign a ddarparir gennym ni
 
 Ar ôl dod a'r pedwar peth yma at eu gilydd, mae modd i chi alinio.
 
-^Ar gyfer segmentu eich testunau, rydym yn awgrymu eich bod chi'n defnyddio'r offer '[Natural Language Toolkit](http://www.nltk.org/)' (NLTK). Os nad ydych chi'n gyfforddus yn ysgrifennu cod Python, mae modd i chi ddefnyddio system ar-lein '[TextAnalysisOnline](http://textanalysisonline.com/nltk-sentence-segmentation)' i segmentu'ch testunau.
+^I segmentu eich testunau, rydym yn awgrymu eich bod chi'n defnyddio'r offer '[Natural Language Toolkit](http://www.nltk.org/)' (NLTK). Os nad ydych chi'n gyfforddus yn ysgrifennu cod Python, mae modd i chi ddefnyddio system ar-lein '[TextAnalysisOnline](http://textanalysisonline.com/nltk-sentence-segmentation)' i segmentu'ch testunau.
 
 
 # Aligning
