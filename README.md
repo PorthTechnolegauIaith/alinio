@@ -14,6 +14,9 @@ Ar ôl dod a'r pedwar peth yma at eu gilydd, mae modd i chi alinio.
 
 ^I segmentu eich testunau, rydym yn awgrymu eich bod chi'n defnyddio'r offer '[Natural Language Toolkit](http://www.nltk.org/)' (NLTK). Os nad ydych chi'n gyfforddus yn ysgrifennu cod Python, mae modd i chi ddefnyddio system ar-lein '[TextAnalysisOnline](http://textanalysisonline.com/nltk-sentence-segmentation)' i segmentu'ch testunau.
 
+### Twitorial LFAligner
+
+Gweler y ffeil [LFAligner](tut/LFAligner.md) am fwy o wybodaeth.
 
 # Aligning
 
@@ -31,3 +34,6 @@ After collecting these for things, you are ready to start aligning your text.
 
 ^To segment your text, we suggest you use the '[Natural Language Toolkit](http://www.nltk.org/)' (NLTK). If you are not comfortable with writing Python code, you can use the online system '[TextAnalysisOnline](http://textanalysisonline.com/nltk-sentence-segmentation)' to segment your texts
 
+### Twitorial LFAligner
+
+Gweler y ffeil [LFAligner](tut/LFAligner.md) am fwy o wybodaeth.
