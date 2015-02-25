@@ -1,4 +1,14 @@
-*** INTRO ***
+## *** Cyflwyniad ***
+
+Bwriedir LF Aligner at ddefnydd cyfieithwyr sydd eisiau creu atgofion cyfieithu o gyfieithiadau a grëwyd heb arf CAT neu o unrhyw destun arall sydd ar gael mewn dwy neu fwy iaith. Ysgrifennwyd y rhaglen er mwyn gwneud yr algorithm alinio brawddegau awtomatig, Hunalign, (gwelwch http://mokk.bme.hu/resources/hunalign) yn haws i’w defnyddio. Mae gan LF Aligner hefyd nodweddion a’u dyluniwyd ar gyfer adeiladu corpora ar raddfa mawr, gan gynnwys y gallu i drin setiau data enfawr, hidlo data integredig, modd swp, segmentu awtomatig a gweithredu heb gymorth. Mae gan yr aliniwr hefyd nodweddion eraill fel creu ffeiliau TMX a llwytho rheolau yr Undeb Ewropeaidd neu unrhyw wefan HTML i lawr ar gyfer alinio.
+
+Mae LF aligner yn defnyddio algorithm clyfar i benderfynu pa frawddeg sy’n mynd gyda pa un, trwy ddibynnu ar hyd y frawddeg, geiriadur a tipyn o hud a lledrith. Pendraw y peth yw nad oes angen arnoch baru segmentau gyda llaw, dim ond golygu y parau gwnaethpwyd gan y rhaglen a gwneud unrhyw gywiriadau angenrheidiol. Y rhan fwyaf o’r amser byddwch yn cael cyfieithiad peirianyddol gellir ei defnyddio heb unrhyw fewnbwn dynol. Mae paru awtomatig Hunalign yn dibynnu yn llwyr ar ansawdd y deunydd ffynhonnell (p’un ai ydych chi wedi tynnu penawdau a throednodiadau ac ati) a p’un ai mae ganddo eiriadur da neu beidio, ond mae canrannau yn y nawdegau uchel yn gyffredin (mae data geiriadur da ar gyfer 800 cyfuniad o fwy na 32 iaith yn dod wedi ei becynnu gyda’r aliniwr. Gallwch wirio yn y log i weld os yw’r data geiriadur yma wedi’i ddefnyddio ar gyfer eich aliniad). Y prif allbwn yw TMX, ond nid oes rhaid defnyddio meddalwedd sy’n gweithio gyda TMX, gall yr aliniwr gynhyrchu ffeiliau XLS ar eich rhan. Cynhyrchir ffeiliau tab delimited pob tro hefyd, addas ar gyfer defnydd gyda Apsis Xbench neu brosesu gyda arfau eraill. 
+
+Mae LF Aligner hefyd yn cynnig rheolaeth lawn dros yr holl broses: yn y TMX, gallwch osod y dyddiad a’r amser, codau iaith, ID creawdwr, ychwanegu nodiadau at bob segment ac ati, ac mae gennych ddewisiadau addasu eang ar gyfer ffwythiannau eraill hefyd. Jest agorwch aligner_setup.txt er mwyn gweld y prif ddewisiadau gosod. 
+
+Mae’r readme hwn yn eithaf hir... os ydych chi eisiau dechrau arni yn gyflym heb ddarllen yr holl beth, gallwch wneud hyn drwy ddilyn y camau disgrifir yn sample/howto.txt, ond mae’n debyg y dylech ddod yn ôl at y readme hwn rywbryd, yn enwedig os ydych chi yn cael trafferth â rhywbeth.  
+
+## *** INTRO ***
 
 LF Aligner is intended for translators who wish to create translation memories from translations made without a CAT tool or from any other text that is available in two or more languages. I wrote it to make what is probably the best open source automatic sentence aligning algorithm, Hunalign (see http://mokk.bme.hu/resources/hunalign) more convenient to use. LF Aligner also has a couple of features designed for larger-scale corpus building, such as handling huge data sets, built-in data filtering, batch mode, automatic segmentation evaluation and unattended operation.
 The aligner also has other features like creating TMX files and downloading EU legislation or any other bilingual HTML webpage for alignment (see details on the web features further down).
@@ -11,7 +21,7 @@ LF Aligner also gives you complete control over the whole process: in the TMX, y
 
 I kept adding information and this readme ended up being pretty long... if you want to get started quickly without reading the whole thing, you can do so by following the steps described in sample/howto.txt, but you should probably come back to this readme later, especially if you get stuck with something.
 
-*** USE ***
+## *** USE ***
 
 The folder named "sample" contains a pair of sample files and a txt with instructions on how to use the script. You can follow the instructions there to see the aligner in operation and learn the basics, and then come back to this readme for more detailed information.
 
