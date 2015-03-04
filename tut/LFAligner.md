@@ -1,87 +1,193 @@
-## *** Cyflwyniad ***
+# LF Aligner
 
-Bwriedir LF Aligner at ddefnydd cyfieithwyr sydd eisiau creu atgofion cyfieithu o gyfieithiadau a grëwyd heb arf CAT neu o unrhyw destun arall sydd ar gael mewn dwy neu fwy iaith. Ysgrifennwyd y rhaglen er mwyn gwneud yr algorithm alinio brawddegau awtomatig, Hunalign, (gwelwch http://mokk.bme.hu/resources/hunalign) yn haws i’w defnyddio. Mae gan LF Aligner hefyd nodweddion a’u dyluniwyd ar gyfer adeiladu corpora ar raddfa mawr, gan gynnwys y gallu i drin setiau data enfawr, hidlo data integredig, modd swp, segmentu awtomatig a gweithredu heb gymorth. Mae gan yr aliniwr hefyd nodweddion eraill fel creu ffeiliau TMX a llwytho rheolau yr Undeb Ewropeaidd neu unrhyw wefan HTML i lawr ar gyfer alinio.
+## Cyflwyniad
+Bwriedir LF Aligner at ddefnydd cyfieithwyr sydd eisiau creu atgofion cyfieithu o 
+gyfieithiadau a grëwyd heb arf CAT neu o unrhyw destun arall sydd ar gael mewn 
+dwy neu fwy iaith. Ysgrifennwyd y rhaglen er mwyn gwneud yr algorithm alinio brawddegau 
+awtomatig, Hunalign, ([gwelwch http://mokk.bme.hu/resources/hunalign](http://mokk.bme.hu/resources/hunalign)) 
+yn haws i’w defnyddio. 
 
-Mae LF aligner yn defnyddio algorithm clyfar i benderfynu pa frawddeg sy’n mynd gyda pa un, trwy ddibynnu ar hyd y frawddeg, geiriadur a tipyn o hud a lledrith. Pendraw y peth yw nad oes angen arnoch baru segmentau gyda llaw, dim ond golygu y parau gwnaethpwyd gan y rhaglen a gwneud unrhyw gywiriadau angenrheidiol. Y rhan fwyaf o’r amser byddwch yn cael cyfieithiad peirianyddol gellir ei defnyddio heb unrhyw fewnbwn dynol. Mae paru awtomatig Hunalign yn dibynnu yn llwyr ar ansawdd y deunydd ffynhonnell (p’un ai ydych chi wedi tynnu penawdau a throednodiadau ac ati) a p’un ai mae ganddo eiriadur da neu beidio, ond mae canrannau yn y nawdegau uchel yn gyffredin (mae data geiriadur da ar gyfer 800 cyfuniad o fwy na 32 iaith yn dod wedi ei becynnu gyda’r aliniwr. Gallwch wirio yn y log i weld os yw’r data geiriadur yma wedi’i ddefnyddio ar gyfer eich aliniad). Y prif allbwn yw TMX, ond nid oes rhaid defnyddio meddalwedd sy’n gweithio gyda TMX, gall yr aliniwr gynhyrchu ffeiliau XLS ar eich rhan. Cynhyrchir ffeiliau tab delimited pob tro hefyd, addas ar gyfer defnydd gyda Apsis Xbench neu brosesu gyda arfau eraill. 
+Mae gan LF Aligner hefyd nodweddion a’u dyluniwyd ar gyfer adeiladu corpora ar raddfa mawr, 
+gan gynnwys y gallu i drin setiau data enfawr, hidlo data integredig, modd swp, 
+segmentu awtomatig a gweithredu heb gymorth. 
 
-Mae LF Aligner hefyd yn cynnig rheolaeth lawn dros yr holl broses: yn y TMX, gallwch osod y dyddiad a’r amser, codau iaith, ID creawdwr, ychwanegu nodiadau at bob segment ac ati, ac mae gennych ddewisiadau addasu eang ar gyfer ffwythiannau eraill hefyd. Jest agorwch aligner_setup.txt er mwyn gweld y prif ddewisiadau gosod. 
+Mae gan yr aliniwr hefyd nodweddion eraill fel creu ffeiliau TMX a llwytho rheolau yr 
+Undeb Ewropeaidd neu unrhyw wefan HTML i lawr ar gyfer alinio.
 
-Mae’r readme hwn yn eithaf hir... os ydych chi eisiau dechrau arni yn gyflym heb ddarllen yr holl beth, gallwch wneud hyn drwy ddilyn y camau disgrifir yn sample/howto.txt, ond mae’n debyg y dylech ddod yn ôl at y readme hwn rywbryd, yn enwedig os ydych chi yn cael trafferth â rhywbeth.  
+Mae LF aligner yn defnyddio algorithm clyfar i benderfynu pa frawddeg sy’n mynd 
+gyda pa un, trwy ddibynnu ar hyd y frawddeg, geiriadur a tipyn o hud a lledrith. 
 
-## *** INTRO ***
+Pendraw y peth yw nad oes angen arnoch baru segmentau gyda llaw, dim ond golygu y 
+parau gwnaethpwyd gan y rhaglen a gwneud unrhyw gywiriadau angenrheidiol. Y rhan fwyaf 
+o’r amser byddwch yn cael cyfieithiad peirianyddol gellir ei defnyddio heb unrhyw 
+fewnbwn dynol. Mae paru awtomatig Hunalign yn dibynnu yn llwyr ar ansawdd y deunydd 
+ffynhonnell (p’un ai ydych chi wedi tynnu penawdau a throednodiadau ac ati) a p’un 
+ai mae ganddo eiriadur da neu beidio, ond mae canrannau yn y nawdegau uchel yn gyffredin 
+(mae data geiriadur da ar gyfer 800 cyfuniad o fwy na 32 iaith yn dod wedi ei becynnu 
+gyda’r aliniwr. Gallwch wirio yn y log i weld os yw’r data geiriadur yma wedi’i ddefnyddio 
+ar gyfer eich aliniad). 
 
-LF Aligner is intended for translators who wish to create translation memories from translations made without a CAT tool or from any other text that is available in two or more languages. I wrote it to make what is probably the best open source automatic sentence aligning algorithm, Hunalign (see http://mokk.bme.hu/resources/hunalign) more convenient to use. LF Aligner also has a couple of features designed for larger-scale corpus building, such as handling huge data sets, built-in data filtering, batch mode, automatic segmentation evaluation and unattended operation.
-The aligner also has other features like creating TMX files and downloading EU legislation or any other bilingual HTML webpage for alignment (see details on the web features further down).
+Y prif allbwn yw TMX, ond nid oes rhaid defnyddio meddalwedd sy’n gweithio gyda TMX, 
+gall yr aliniwr gynhyrchu ffeiliau XLS ar eich rhan. Cynhyrchir ffeiliau tab delimited 
+pob tro hefyd, addas ar gyfer defnydd gyda Apsis Xbench neu brosesu gyda arfau eraill.
 
-The reason why you may want to use this simple tool instead of the flashy and complicated aligners from the big players is Hunalign. It uses a smart algorithm to determine which sentence goes with which, relying on sentence length, a dictionary and, as near as I can tell, black magic, and it does a really good job. The upshot is that you don't have to manually pair up the segments, only review the pairings and do any necessary corrections - or not even that. Most of the time you will get a very usable TM without human input.
-The accuracy of Hunalign's automatic pairings depends entirely on the quality of the source material (whether you have removed page headers and footers etc.) and whether it has a good dictionary to work with, but percentages in the high nineties are common. (Reasonably good dictionary data is bundled with LF Aligner for more than 800 combinations of 32 languages. You can check the log to see if this dictionary data was used for your alignment.)
-The primary output is TMX, but if you don't use TMX-compatible software, the aligner can generate xls files for you. Tab delimited txt files are always generated as well, suitable for use with Apsic Xbench or processing with other tools.
+Mae LF Aligner hefyd yn cynnig rheolaeth lawn dros yr holl broses: yn y TMX, gallwch osod 
+y dyddiad a’r amser, codau iaith, ID creawdwr, ychwanegu nodiadau at bob segment ac ati, 
+ac mae gennych ddewisiadau addasu eang ar gyfer ffwythiannau eraill hefyd. Jest agorwch 
+aligner_setup.txt er mwyn gweld y prif ddewisiadau gosod.
 
-LF Aligner also gives you complete control over the whole process: in the TMX, you can set the date and time, language codes, creator ID, add notes to each segment etc., and you have extensive customisation options regarding a bunch of other features, too. Just open aligner_setup.txt to see the main setup options.
+Mae’r readme hwn yn eithaf hir... os ydych chi eisiau dechrau arni yn gyflym heb ddarllen yr 
+holl beth, gallwch wneud hyn drwy ddilyn y camau disgrifir yn sample/howto.txt, ond mae’n 
+debyg y dylech ddod yn ôl at y readme hwn rywbryd, yn enwedig os ydych chi yn cael 
+trafferth â rhywbeth.  
 
-I kept adding information and this readme ended up being pretty long... if you want to get started quickly without reading the whole thing, you can do so by following the steps described in sample/howto.txt, but you should probably come back to this readme later, especially if you get stuck with something.
+## DEFNYDD 
+Mae’r ffolder o’r enw “sample” yn cynnwys pâr o ffeiliau enghreifftiol a txt gyda 
+chyfarwyddiadau ar sut i ddefnyddio’r sgript. Gallwch ddilyn y cyfarwyddiadau yma 
+er mwyn gweld yr aliniwr yn gweithio a dysgu y materion sylfaenol, ac wedyn dod 
+yn ôl at y readme yma am fwy o wybodaeth.
 
-## *** USE ***
+Gall y ffeiliau mewnbwn fod yn txt, doc, docx, odt, rtf, tmx, HTML, pdf a rhai 
+fformatau eraill. Gwnewch yn siŵr eich bod chi’n defnyddio amgodio UTF ar eich 
+ffeiliau txt bob tro. 
 
-The folder named "sample" contains a pair of sample files and a txt with instructions on how to use the script. You can follow the instructions there to see the aligner in operation and learn the basics, and then come back to this readme for more detailed information.
+Gwelwch fanylion ar baratoi ffeiliau mewnbwn yn bellach ymlaen isod.
 
-The input files can be txt, doc, docx, odt, rtf, tmx, HTML, pdf and a few other formats. Always use UTF-8 encoding in your txt files. See details on preparing input files further below.
+Does dim angen gosod y rhaglen o gwbl, dim ond clicio dwywaith ar LF_aligner_XXX 
+er mwyn dechrau’r rhaglen. Bydd ffenest raffigol neu llinell orchymyn yn agor, 
+a bydd prompt yn gofyn am eich mewnbwn yn ôl yr angen. 
 
-No installation is needed, just double click on LF_aligner_XXX to launch the program. A graphical or command line window will open, and prompt you for input as needed. (Note: the initial startup may be very slow on Windows. Just wait until the first prompt appears; it will show up eventually, and things will speed up from then on.) Read the prompts, type or click what you are asked to and press Enter or click Next. Any error messages will also be displayed in the same window. If something went wrong, read the error messages carefully, check the log in the scripts folder, then run the program again if you have an idea about what went wrong.
-To "uninstall", just delete the aligner folder. LF Aligner makes no changes to the registry or other system settings, so the aligner folder is all there is.
+(Nodyn: gall y broses ddechrau am y tro cyntaf fod yn araf iawn yn Windows. Jest 
+agorwch tan fod y prompt cyntaf yn ymddangos; bydd yn ymddangos ar ôl saib, a bydd 
+pethau yn cyflymu o hynny allan).
 
-It is highly advisable to create a new folder for each new alignment project, containing only the two files to be aligned, or else old files may be overwritten etc. Your project folder can be anywhere on your computer. (Note: on Windows, use only ASCII characters in file and folder names!) If you use the web features (to download and align EU legislation etc.), your files will be downloaded to the program folder.
+Darllenwch y promptiau, teipiwch a chliciwch pan gofynnir i chi wneud hynny a gwasgwch 
+Enter neu cliciwch Next. Bydd unrhyw negeseuon gwall yn cael eu dangos yn yr un ffenest. 
+Os aeth rhywbeth yn anghywir, darllenwch y negeseuon gwall yn ofalus, gwiriwch y log yn 
+y ffolder sgriptiau, a wedyn rhedwch y rhaglen eto os nad oes gennych unrhyw syniad 
+pam aeth pethau o’i le. Er mwyn tynnu y rhaglen, dilëwch ffolder yr aliniwr. Nid yw 
+LF Aligner yn gwneud unrhyw newidiadau i’r gofrestrfa na unrhyw osodiadau system eraill, 
+felly dim ond y ffolder sy’n cynnwys yr aliniwr sydd. 
 
+Mae’n cyngor da iawn creu ffolder newydd ar gyfer pob project alinio newydd, sydd yn 
+cynnwys dim ond y dwy ffeil bydd yn cael eu alinio, neu mae’n bosib y gall hen ffeiliau 
+gael eu trosysgrifo ac ati. Gall eich ffolder project fod unrhyw le ar eich cyfrifiadur. 
 
-Note on all input document formats:
-The import of every "rich text" document format, i.e. everything apart from txt and (hopefully) tmx is potentially lossy.
-E.g. if your pdf, html, doc, docx, rtf or other file contains tables, they are probably going to come out wrong. Tables are best handled manually, i.e. you should move each cell to a separate line for best results. Most other elements that occur in running text are handled well, but no promises, especially with pdf. Hyperlinks, special symbols, footnotes, sidenotes, page headers and generally everything other than running text with "normal characters" may not come out the way you expect them to. Txt input files are always going to be the safest, so use txt whenever you can.
-See "Using your CAT to extract/segment text:" on how to get around the problem by piggybacking on your CAT tool.
+(Nodyn: ar Windows, gwnewch yn sicr mai nodau ASCII yn unig byddwch yn eu defnyddio ar 
+gyfer enwau ffeiliau a ffolderi!) os byddwch yn defnyddio nodweddion gwe (er mwyn llwytho 
+i lawr ac alinio deddfwriaeth yr UE ac ati), bydd eich ffeiliau yn cael eu llwytho i lawr 
+i ffolder y rhaglen.    
 
+### Nodyn ar pob fformat dogfen mewnbwn: 
+mae gan mewnforio unrhyw ddogfen “rich text”, h.y. unrhyw
+beth ond am txt a (gobeithio) tmx y potensial i fod yn ‘lossy’ (h.y y gall rai o nodweddion y 
+ffeil wreiddiol gael eu colli). Er enghraifft, os yw eich pdf, html, doc, docx, rtf neu unrhyw 
+ffeil arall yn cynnwys tablau, mae’n debygol y bydden nhw yn dod allan yn anghywir. Mae’n well 
+delio gyda tablau a llaw, h.y. dylech symud pob cell i linell ar wahân ar gyfer y canlyniadau 
+gorau. Mae’r rhan fwyaf o elfennau sy’n ymddangos mewn testun a redir yn gweithio yn dda, ond 
+dim addewidion, yn enwedig o ran pdf. Gall hypergysylltiadau, symbolau arbennig, troednodiadau, 
+penynnau ac yn gyffredinol pob dim heblaw am redeg testun gyda “nodau arferol” arwain at ganlyniad 
+nad oeddech yn ei ddisgwyl. Ffeiliau mewnbwn txt bydd wastad y fformat mwyaf saff, felly defnyddiwch 
+txt pob tro lle mae’n bosib gwneud hyn.   
 
-Note on doc import: this is done with Antiword, which seems to work really well, although I haven't bothered testing it very much. Headers and footers are not conserved, but hidden text is. Footnotes are added to the end of the document. Pictures are represented by [pic], which the aligner subsequently deletes if it's on a line by itself.
-On Windows, doc conversion should work out of the box, just launch LF Aligner and drop in your doc files. The Windows version of Antiword requires the file C:\antiword\UTF-8.txt, so this is created by the aligner. This is the only file the aligner creates or modifies outside of its own folder. (Note: disregard the "I can't find the name of your HOME directory" messages, they are of no importance.)
-On non-Windows systems, you'll have to install Antiword yourself. Sudo apt-get install antiword should take care of it in Debian, Ubuntu & co - in other distros, check your package manager. If you are an OS X user, these should get you started: http://www.winfield.demon.nl/ http://antiword.darwinports.com/ 
-As always, check the results; comparing the word/character numbers reported by the aligner to the word count numbers from Word is probably a good idea. Of course, txt will always be the most reliable input format, so if you want to be absolutely, 100% certain that the alignment contains the text you want it to, convert your text to txt yourself and make sure it's kosher before running the aligner.
+### Nodyn ar fewnforio dogfennau: 
+gwneir hyn gyda Antiword, sy’n gweithio yn eithaf da, er nad ydyw wedi 
+ei destio llawer. Nid yw pennau na throednodiadau yn cael eu cadw, ond bydd testun cudd yn. 
+Ychwanegir troednodiadau at diwedd y ddogfen. Cynrychiolir lluniau gan [pic], a bydd yr aliniwr 
+yn dileu hyn os mae ar linell ar ben ei hun. Ar Windows, dylai trosi dogfennau weithio yn syth, 
+jest dechreuwch LF Aligner a gollyngwch eich ffeiliau doc i mewn. Mae’r fersiwn Windows o Antiword 
+angen y ffeil C:\antiword\UTF-8.txt, felly fe grëir hwn gan yr aliniwr. Dyma’r unig ffeil mae’r aliniwr 
+yn creu neu yn addasu tu allan i’w ffolder ei hun. 
 
-Note on docx import: this uses docx2txt, which is bundled with LF Aligner in all versions, and it should usually work well, extracting text even from corrupted docx files. Page headers, footers and footnotes are removed - I consider that a feature, not a bug. Hidden characters are conserved, so delete them first if you don't want them in your TM.
-The same caveats apply as with .doc. 
+(Nodyn: anwybyddwch y negeseuon sy’n dweud “ni allaf ffeindio enw eich cyfeiriadur CARTREF”, nid ydynt yn bwysig.)
 
-Note on rtf import: this is done with Abiword. If you're on OS X or Linux, you'll need to install Abiword yourself. In Ubuntu, you'll find it in the software centre. Also, see http://www.abisource.com/download/index.phtml
-Abiword is also the aligner's last line of defence against odd input files: if you specify the generic "t" filetype and the extension is not txt, doc or docx, Abiword is used to try and convert your file to txt. It should work with Abiword's own abw files, as well as docm, odt and a couple of other file formats. You can probably install some Abiword plugins and get support for even more weird and wonderful file formats.
+### Nodyn ar mewnforio docx: 
+mae hyn yn defnyddio docx2txt, a’i becynnir gyda LF Aliniwr ym mhob fersiwn, ac mae’n 
+gweithio yn eithaf da, ac yn echdynnu testun hyd yn oed o ffeiliau docx llwgr. 
 
-Notes on pdf import:
-Obviously, this won't work with pdf files that contain images of scanned documents - unless they happen to be special two-layer OCRed pdf files that contain the underlying text as well as the image.
-Remember: don't expect perfection. The pdf format is horrible; extracting text reliably is simply not possible with any automated method. That's just the way pdf is, there is nothing you can do about it except thank Adobe and the document's author.
-There are 4 options you can try with pdf, with each producing slightly different end results. There is no best way, what's best for a given file depends on the file itself.
+Tynnir penynnau tudalen, troedynnau, troednodiadau – gellir ystyried hyn yn nodwedd ddefnyddiol, a nid yn wall. 
+Caiff nodau cudd eu cadw, felly dilëwch nhw yn gyntaf os nad ydych chi eu heisiau yn eich peiriant cyfieithu. 
+Mae’r cyngor yma hefyd yn wir ar gyfer ffeiliau .doc. 
 
-1) Use "Save as text" in Acrobat Reader, then resave the txt file generated by Acrobat Reader in UTF-8 and run the aligner on the txt file in pdf (p) mode
-2) Run the aligner directly on the pdf files with default settings
-3) Run the aligner directly on the pdf files after changing the "Pdf conversion mode" option in the setup file to n
-4) Copy-paste text out of the pdf into a txt and run the aligner on that in txt (t) mode
+### Nodyn ar fewnforio rtf: 
+gwneir hyn gyda Abiword. Os ydych yn defnyddio OS X neu Linux, bydd angen i chi osod 
+Abiword eich hun. Yn Ubuntu, gallwch ei ddarganfod yn y ganolfan feddalwedd. Hefyd, 
+gwelwch [http://www.abisource.com/download/index.phtml](http://www.abisource.com/download/index.phtml). 
+Abiword yw amddiffyniad gorau yr aliniwr yn erbyn ffeiliau mewnbwn rhyfedd: os wnewch chi yn enwi y math ffeil 
+cyffredin “t” ac mae estyniad eich ffeil yn rhywbeth gwahanol i txt, doc neu docx, defnyddir Abiword er mwyn 
+ceisio trosi eich ffeil mewn i un txt. Dylai hyn weithio gyda ffeiliau abw Abiword ei hunan, yn ogystal a docm, 
+odt a mwy o fformatau ffeiliau eraill sy’n bodoli. Mae’n bosib y byddech yn gallu gosod rhai o ategion Abiworld 
+a derbyn cymorth ar gyfer hyd yn oed mwy o fformatau egsotig. 
 
-Generally, 1), i.e. exporting to txt format in Acrobat Reader works a bit better than feeding the pdf to the aligner directly if the file has non-linear text placement, such as text in columns or tables or the margins of the page. For this reason, exporting is always recommended for pdf files. The procedure is as follows: open the pdf in Adobe Acrobat Reader, click File/Save as text. Then open the resulting txt file with Notepad, choose File/Save as and resave with UTF-8 encoding. Then just use the "p" file type in the aligner. Do NOT run the aligner in "t" mode on exported pdf files!
-The built-in converter (used in options 2 and 3 above) is mainly designed to be used if you have many files to align and exporting them one by one would be too time-consuming (i.e. it's mostly designed to be used in batch mode). You can configure its behaviour with the "Pdf conversion mode" setting in setup (the "y" setting works better with tables, it makes the txt files easier to review and does a better job of keeping separate segments separated, so "y" is the default even though it does a worse job with side notes and columns).
-Overall, it is a bit worse with non-linear text than exporting from Acrobat Reader. It's absolutely fine for simple running text, though... Except that page headers and footers are left in the text because it's not really possible to automatically filter them out. That's another "feature" you can thank Adobe for.
-You could also try copy-pasting from the pdf into a txt file, but once you have a pdf open in Acrobat Reader, you're better off just exporting.
+### Nodiadau ar fewnforio pdf: 
+Yn amlwg, ni fydd y broses yma yn gweithio gyda ffeiliau pdf sy’n cynnwys delweddau 
+sydd wedi eu sganio o ddogfennau – heblaw eu bod nhw’n digwydd bod yn ffeiliau pdf OCRed dwy haen sy’n cynnwys 
+y testun waelodol yn ogystal a’r ddelwedd. Mae’r fformat pdf yn un lletchwith; mae echdynnu testun mewn modd 
+dibynadwy yn amhosib gyda unrhyw ddull awtomatig. Dyna’r broblem gyda pdf, a does prin dim gallwch wneud am hyn. 
+Mae 4 opsiwn gallech drio gyda’r pdf, gyda phob un yn cynnig canlyniad diwedd ychydig yn wahanol. 
+Does dim un ffordd sydd well, mae’r dull gorau ar gyfer unrhyw ffeil yn dibynnu ar natur y ffeil ei hun. 
 
-If your originals are in some unsupported format, either save them in .doc or .docx or copy-paste their content into Notepad (or any other text editor) and save them as TXT with UTF-8 encoding (this is not Notepad's default so you explicitly have to set UTF-8 in the "Save as" dialog). See "Using Trados to extract/segment text" for tips on possible ways to handle .ppt and generally any format your CAT is compatible with.
+ 1.	Defnyddiwch “cadw fel testun” yn Acrobat Reader, wedyn ail gadwch y ffeil txt a gynhyrchwyd gan Acrobar Reader mewn UTF-8 a rhedwch yr aliniwr ar y ffeil testun mewn modd pdf (p)  
+ 2.	Rhedwch yr aliniwr yn uniongyrchol ar y ffeiliau pdf gyda’r gosodiadau rhagosodedig 
+ 3.	Rhedwch yr aliniwr yn uniongyrchol ar y ffeiliau pdf ar ôl newid yr opsiwn “modd trosi pdf” yn y ffeil osodiadau i n
+ 4.	Copïwch a gludwch destun o’r pdf i mewn i txt a rhedwch yr aliniwr arno yn modd txt (t)
+ 
+Yn gyffredinol, mae (1) h.y. mewnforio i fformat txt yn Acrobat Reader yn gweithio rhywfaint yn well na cheisio
+bwydo y pdf yn uniongyrchol i’r aliniwr os oes gan y ffeil leoliad testun aflinol, megis testun mewn colofnau neu 
+dablau neu ar ymylon y dudalen. Oherwydd hyn, cynghorir mewnforio bob tro ar gyfer ffeiliau pdf. Mae’r weithdrefn 
+fel a ganlyn: agorwch y pdf yn Adobe Acrobat Reader, liciwch File/Cadw fel testun. Yna agorwch y ffeil ganlynol 
+gyda Notepad, dewiswch  Ffeil/Cadw fel ac ail-gadwch gyda amgodio UTF-8. Yna defnyddiwch y math ffeil “p” yn yr 
+aliniwr. Peidiwch a rhedeg yr aliniwr yn y modd “t” ar ffeiliau pdf wedi eu allforio! Mae’r nodwedd trosi 
+sy’n rhan o’r rhaglen (a ddefnyddiwyd yn  opsiynau 2 a 3 uchod) wedi ei ddylunio ar gyfer sefyllfaoedd lle 
+mae gennych nifer fawr o ffeiliau i’w alinio a lle byddai eu allforio yn cymryd gormod o amser (h.y. mae wedi 
+ei greu ar gyfer modd swp). Gallwch addasu ei ymddygiad drwy’r gosodiad “modd trosi pdf” yn y dudalen gysodi 
+((mae’r gosodiad “y” yn gweithio yn well gyda thablau, ac mae’n gwneud ffeiliau txt yn haws i’w adolygu ac mae’n 
+well am gadw’r segmentau sydd ar wahân, ar wahân, felly  “y” yw’r dewis rhagosodedig er ei fod yn gwneud 
+jobyn gwaeth gyda nodiadau ochr a colofnau). Ar y cyfan, mae tipyn yn waeth gyda testun aflinol na allforio o 
+Acrobat Reader. Mae’n hollol dderbyniol ar gyfer rhedeg testun, er fod penynnau a troedynnau yn cael eu gadael 
+yn y testun am dad yw hi wir yn bosib eu hidlo allan yn awtomatig. Byddai hefyd yn bosib copïo a gludo o’r pdf 
+i mewn i ffeil destun, ond unwaith bod gennych ffeil pdf wedi ei hagor yn Acrobat Reader, byddai’n well i chi 
+jest ei fewnforio.   
 
-Remove page numbers and page headers/footers from your txt files before running the aligner (this is usually only needed if the original was a pdf). Read up on Microsoft Word's wildcard search and replace to figure out how to remove headers/footers containing a running page number with one command: accurapid.com/journal/15msw.htm
-This is important, as, if you leave them in, Hunalign will diligently pair up the nicely matching page headers/footers with each other and consequently mess up the alignment of the text in between - unless page breaks are applied in a uniform manner in the originals.
+Os yw eich ffeiliau gwreiddiol mewn fformat heb gefnogaeth, gallwch unai eu cadw nhw mewn .doc neu .docx neu copïo a 
+gludo eu cynnwys i mewn i Notepad (neu unrhyw olygydd testun arall) a’u cadw nhw fel TXT gyda amgodio UTF-8 
+(nid gosodiad rhagosodedig Notepad yw hyn, felly mae’n rhaid i chi osod UTF-8 yn y dialog “Cadw Fel”. 
+Gwelwch "Defnyddio Trados er mwyn/echdynnu segmentu testun" ar gyfer cymorth ynglŷn a sut mae defnyddio .ppt ac 
+unrhyw fformat yn gyffredinol mae eich CAT yn gyfarwydd ag ef. 
 
+Tynnwch rifau tudalen a penynnau a troedynnau o’ch ffeiliau txt cyn rhedeg yr aliniwr (mae angen hyn fel arfer 
+dim ond os oedd y gwreiddiol yn pdf). Darllenwch mwy ynglŷn a nodwedd chwilio a disodli wildcat Microsoft Word 
+i weld sut mae tynnu penynnau a troedynnau sy’n cynnwys rhifau tudalen sy’n rhedeg gan ddefnyddio un gorchymyn: 
+[accurapid.com/journal/15msw.htm](http://accurapid.com/journal/15msw.htm). Mae hyn yn bwysig, oherwydd os byddwch 
+yn gadael rhain i mewn, bydd hunalign yn paru y penynnau a throedynnau sy’n matsio gyda’u gilydd, fydd yn gwneud 
+llanast o aliniad y testunau sydd rhyngddyn nhw – heblaw bod toriadau tudalen yn cael eu gosod mewn dull unffurf 
+yn y dogfennau gwreiddiol. 
 
-Setup:
+### Cysodi:
+Mae’n debyg eich bod chi wedi sylwi ar y ffeil aligner_setup.txt. Mae’r ffeil yma yn caniatáu i chi addasu ymddygiad 
+LF Aligner. Agorwch y ffeil a newidiwch y gwerthoedd yn y [] fel y mynnwch. 
 
-You've probably noticed the file aligner_setup.txt. This file allows you to extensively customize LF Aligner's behaviour. Just open it and change the values in [] as you see fit.
+Os yw eich ffeil txt (xml ac ati) yn cynnwys tagiau wedi eu amgáu ac rydych chi eisiau cael gwared arnyn nhw, newidiwch
+yr estyniad i html a dywedwch wrth y sgript ei fod yn ffeil html. Caiff pob dim oddi mewn ei ddileu heblaw am , , bydd 
+yn cael eu trosi yn doriadau llinellau (ac felly yn troi i mewn i amffinyddion segmentau). Er mwyn gorfodi toriadau 
+segmentau, gosodwch tagiau (anwybyddir toriadau llinell mewn ffeiliau sydd wedi eu tagio). 
 
-If your txt (xml, etc.) file contains tags enclosed in <> and you want to get rid of them, change the extension to html and tell the script it's an html file. Everything enclosed in <> will be deleted except for <p>, <P>, <br> and <br /> which will be converted to line breaks (and thus become segment delimiters). To enforce segment breaks, insert <p> tags (line breaks are ignored in tagged files).
+Mae’r sgript yn cadw ffeiliau wrth gefn o’r ffeiliau gwreiddiol. 
 
-The script keeps backups of the original files. Other output files: aligned_XXX.txt is the tab delimited aligned file Hunalign produces, i.e. the main output file. (The 3rd column contains the source info, and the 4th column contains the match confidence value if you enable that.) The .xls has the same content, with reviewing instructions. XXX.tmx... well, no points for guessing that one.
+### Ffeiliau allbwn eraill: 
+aligned_XXX.txt yw’r ffeil wedi’i alinio wedi ei amffinio gan dabiau y mae Hunalign yn ei 
+gynhyrchu, h.y. y prif ffeil allbwn. (Bydd y drydedd golofn yn cynnwys y wybodaeth ffynhonnell, a’r bedwaredd 
+golofn yn cynnwys y gwerth hyder cydweddu os byddwch chi’n galluogi hwnnw). Mae gan .xls yr un cynnwys, yn ogystal 
+a cyfarwyddiadau adolygu. Dylai XXX.tmx fod yn amlwg.
 
+### Cymorth ar gyfer adolygu yr aliniad
+Os mai defnyddiwr Windows ydych chi, dylai’r golygydd raffigol fod y dewis rhagosodedig o fersiwn 4.0. ymlaen, a 
+dyma’r dewis mwyaf hwylus o bellffordd. Mae rhai cyfarwyddiadau ar gael yn Help/Usage, ac mae mwy o wybodaeth ar 
+gael yn y readme yn aligner/other_tools. 
 
-Tips for reviewing alignment:
+Pan rydych wedi gorffen, gwnewch yn sicr eich bod chi’n gadael y rhaglen gan ddefnyddio File/Save exit, a nid 
+drwy gau y ffenest. 
 
-If you're a Windows user, the graphical editor is the default option as of version 4.0, and it is by far the most convenient one. Some instructions are available in Help/Usage, and a little more info is given in the readme in aligner/other_tools. When you are done, make sure you quit using File/Save exit, and NOT by closing the window.
+Ar gyfer defnyddwyr Linux/a Mac, mae cyfarwyddiadau ar sut i adolygiad yn Excel ar daenlen 2 o’r ffeil xls a 
+gynhyrchwyd gan yr aliniwr. Darparir macro yn aligner/scripts/MergeCells.xla er mwyn cyflymu y broses.
 
-For linux/mac users, instructions on how to do a review in Excel are on worksheet 2 of the xls file generated by the aligner. A macro is provided in aligner/scripts/MergeCells.xla to speed up the process.
