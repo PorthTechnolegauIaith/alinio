@@ -1,18 +1,58 @@
 # Alinio
 
-Er mwyn alinio testunau Cymraeg a Saesneg, rydym yn awgrymu eich bod chi'n defnyddio [hunalign](http://mokk.bme.hu/en/resources/hunalign/).
-Os oes well gennych chi ddefnyddio rhaglen gyda rhyngwyneb, mae [LF Aligner](http://aligner.sourceforge.net/) yn ddewis da ar gyfer Windows.
+Er mwyn alinio testunau Cymraeg a Saesneg, rydym yn awgrymu eich bod chi'n defnyddio [hunalign](http://mokk.bme.hu/en/resources/hunalign/). 
+Mae hunalign yn rhaglen ar ffurf gorchmynion terfynnell. Os oes well gennych chi ddefnyddio rhaglen gyda rhyngwyneb, mae [LF Aligner](http://aligner.sourceforge.net/) yn ddewis da ar gyfer Windows.
 
-Cyn cychwyn alinio, bydd angen 4 peth:
+Mae'r project yma yn cynnwys cod Python sy'n hwyluso defnyddio hunalign o fewn terfynnell.  
 
-* Gosod Hunalign (neu LF Aligner) ar eich peiriant
-* Testun Cymraeg wedi'i segmentu^
-* Testun Saesneg wedi'i segmentu^
-* Ffeil `.dic` ar gyfer hunalign a ddarparir gennym ni
+Cyn cychwyn alinio, bydd angen 3 peth:
 
-Ar ôl dod a'r pedwar peth yma at eu gilydd, mae modd i chi alinio.
+* Gosod Hunalign (neu LF Aligner) ar eich peiriant gyda'r gorchmynion canlynol:
 
-^I segmentu eich testunau, rydym yn awgrymu eich bod chi'n defnyddio'r offer '[Natural Language Toolkit](http://www.nltk.org/)' (NLTK). Os nad ydych chi'n gyfforddus yn ysgrifennu cod Python, mae modd i chi ddefnyddio system ar-lein '[TextAnalysisOnline](http://textanalysisonline.com/nltk-sentence-segmentation)' i segmentu'ch testunau.
+```sh
+ $ wget ftp://ftp.mokk.bme.hu/Hunglish/src/hunalign/latest/hunalign-1.1.tgz
+ $ tar zxvf hunalign-1.1.tgz 
+ $ cd hunalign-1.1/src/hunalign
+ $ make
+```
+
+* Gosod NLTK a fydd o help i segmentu testun i frawddegau:
+
+```sh
+ $ sudo easy_install pip
+ $ sudo pip install -U nltk
+ ```
+ 
+ Bydd angen gosod cydran segmentu NLTK fel hyn :
+ 
+ ```python
+ $ python
+ Python 2.7.6 (default, Mar 22 2014, 22:59:56) 
+ [GCC 4.8.2] on linux2
+ Type "help", "copyright", "credits" or "license" for more information.
+ >>> import nltk
+ >>> nltk.download()
+ NLTK Downloader
+---------------------------------------------------------------------------
+    d) Download   l) List    u) Update   c) Config   h) Help   q) Quit
+---------------------------------------------------------------------------
+Downloader> d
+Download which package (l=list; x=cancel)?
+  Identifier> punkt
+    Downloading package punkt to /home/gallu/nltk_data...
+      Unzipping tokenizers/punkt.zip.
+```
+
+* Ffeil `.dic` ar gyfer hunalign a ddarparir gennym ni:
+
+```sh
+ $ cd hunalign-1.1/data
+ $ wget wget http://techiaith.org/alinio/hunalign/cy-en.dic
+ ```
+
+Ar ôl dod a'r tri peth yma at eu gilydd, mae modd i chi alinio.
+
+
 
 ### Twitorial LFAligner
 
