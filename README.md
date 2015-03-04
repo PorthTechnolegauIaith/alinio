@@ -22,32 +22,11 @@ Cyn cychwyn alinio, bydd angen 3 peth:
  $ sudo easy_install pip
  $ sudo pip install -U nltk
  ```
- 
- Bydd angen gosod cydran segmentu NLTK fel hyn :
- 
- ```python
- $ python
- Python 2.7.6 (default, Mar 22 2014, 22:59:56) 
- [GCC 4.8.2] on linux2
- Type "help", "copyright", "credits" or "license" for more information.
- >>> import nltk
- >>> nltk.download()
- NLTK Downloader
----------------------------------------------------------------------------
-    d) Download   l) List    u) Update   c) Config   h) Help   q) Quit
----------------------------------------------------------------------------
-Downloader> d
-Download which package (l=list; x=cancel)?
-  Identifier> punkt
-    Downloading package punkt to /home/gallu/nltk_data...
-      Unzipping tokenizers/punkt.zip.
-```
 
 * Ffeil `.dic` ar gyfer hunalign a ddarparir gennym ni:
 
 ```sh
- $ cd hunalign-1.1/data
- $ wget wget http://techiaith.org/alinio/hunalign/cy-en.dic
+ $ wget http://techiaith.org/alinio/hunalign/cy-en.dic -O hunalign-1.1/data/cy-en.dic
  ```
 
 Ar ôl dod â'r tri peth yma at eu gilydd, mae modd i chi alinio.
