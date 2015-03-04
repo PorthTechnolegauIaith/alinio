@@ -34,12 +34,12 @@ Ar ôl dod â'r tri peth yma at eu gilydd, mae modd i chi alinio.
 ### Alinio
 
 Defnyddiwch y sgript python `alinio.py` er mwyn alinio.    
-Mae angen 3 'mewnbwn' i'r sgript:
+Mae angen 3 'mewnbwn' ar y sgript:
 * Eich ffeil testun Saesneg
 * Eich ffeil testun Cymraeg
 * Enw ar gyfer ffeil allbwn y data sydd wedi'i alinio (neu `-` ar gyfer stdout)
 
-Wedyn gall rhedeg y sgript gyda:
+Yna gallwch redeg y sgript gyda'r gorchymyn isod:
 
 ```sh
 $ python alinio.py -e ffeil_saesneg.txt -c ffeil_cymraeg.txt allbwn.txt
