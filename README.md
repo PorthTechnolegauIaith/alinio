@@ -63,7 +63,7 @@ Gweler y ffeil [LFAligner](tut/LFAligner.md) am fwy o wybodaeth.
 In order to align Welsh and English texts, we recommend that you use [hunalign](http://mokk.bme.hu/en/resources/hunalign/).
 Hunalign uses a terminal and command line interface. If you prefer a programme with a graphical interface, [LF Aligner](http://aligner.sourceforge.net/) is a good option for Windows.
 
-Before starting your alignment, you need 4 things:
+Before starting your alignment, you will need 3 things:
 
 * An installation of hunalign (or LF Aligner) on your machine
 
@@ -74,7 +74,7 @@ Before starting your alignment, you need 4 things:
  $ make
 ```
 
-* Install NLTK, which will help you in the process of segmenting text into 
+* An installation of NLTK, which will help you in the process of segmenting text into 
 sentences: 
 
 ```sh
