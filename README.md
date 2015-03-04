@@ -23,7 +23,7 @@ Cyn cychwyn alinio, bydd angen 3 peth:
  $ sudo pip install -U nltk
  ```
 
-* Ffeil `.dic` ar gyfer hunalign a ddarparir gennym ni:
+* Gosod ffeil `.dic` ar gyfer hunalign a ddarparir gennym ni:
 
 ```sh
  $ wget http://techiaith.org/alinio/hunalign/cy-en.dic -O hunalign-1.1/data/cy-en.dic
@@ -31,11 +31,27 @@ Cyn cychwyn alinio, bydd angen 3 peth:
 
 Ar ôl dod â'r tri peth yma at eu gilydd, mae modd i chi alinio.
 
+### Alinio
 
+Defnyddiwch y sgript python `alinio.py` er mwyn alinio.    
+Mae angen 3 'mewnbwn' i'r sgript:
+* Eich ffeil testun Saesneg
+* Eich ffeil testun Cymraeg
+* Enw ar gyfer ffeil allbwn y data sydd wedi'i alinio (neu `-` ar gyfer stdout)
+
+Wedyn gall rhedeg y sgript gyda:
+
+```sh
+$ python alinio.py -e ffeil_saesneg.txt -c ffeil_cymraeg.txt allbwn.txt
+```
+
+Agorwch y ffeil `allbwn.txt` er mwyn gweld y data wedi'i alinio.
 
 ### Twitorial LFAligner
 
 Gweler y ffeil [LFAligner](tut/LFAligner.md) am fwy o wybodaeth.
+
+--------
 
 # Aligning
 
@@ -63,34 +79,30 @@ sentences:
  $ sudo pip install -U nltk
  ```
 
-*  You'll need to install the NLTK segmenting program like this :
-
- ```python
- $ python
- Python 2.7.6 (default, Mar 22 2014, 22:59:56) 
- [GCC 4.8.2] on linux2
- Type "help", "copyright", "credits" or "license" for more information.
- >>> import nltk
- >>> nltk.download()
- NLTK Downloader
----------------------------------------------------------------------------
-    d) Download   l) List    u) Update   c) Config   h) Help   q) Quit
----------------------------------------------------------------------------
-Downloader> d
-Download which package (l=list; x=cancel)?
-  Identifier> punkt
-    Downloading package punkt to /home/gallu/nltk_data...
-      Unzipping tokenizers/punkt.zip.
-```
-
 * A `.dic` file used by hunalign which we distribute 
 
 ```sh
  $ cd hunalign-1.1/data
- $ wget wget http://techiaith.org/alinio/hunalign/cy-en.dic
+ $ wget http://techiaith.org/alinio/hunalign/cy-en.dic -O hunalign-1.1/data/cy-en.dic
  ```
 
 After bringing together these three elements, you are ready to start aligning your text.
+
+### Alinining
+
+User the Python script `alinio.py` to align your text.
+The script requirest three input parameters:
+* The name of your English text file
+* The name of your Welsh text file
+* A name for your output file where aligned data is stored. (use `-` for stdout)
+
+You can then use the script in the following way:
+
+```sh
+$ python alinio.py -e enlgish_file.txt -c welsh_file.txt output.txt
+```
+
+Open the `output.txt` file to see your aligned data.
 
 
 ### LFAligner Tutorial
