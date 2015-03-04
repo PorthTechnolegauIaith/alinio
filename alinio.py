@@ -8,14 +8,14 @@ class AliniwrError(Exception):
 
 sentence_detector=nltk.data.load('tokenizers/punkt/english.pickle')
 
-def alinio(file_1, file_2, outfile):
+def alinio(file_cy, file_en, outfile):
 
 	if not os.path.exists('hunalign-1.1'):
         	print("Mae angen i chi llwytho'r meddalwedd HunAlign i lawr cyn all defnyddio'r aliniwr....")
         	print("Ewch i http://mokk.bme.hu/en/resources/hunalign/ am manylion")
 
 	f=codecs.open(outfile,"w","utf-8")
-	cmd="./hunalign-1.1/src/hunalign/hunalign -text -utf -realign /dev/null" + file_1 + " " + file_2
+	cmd="./hunalign-1.1/src/hunalign/hunalign data/cy-en.dic -text -utf -realign " + file_cy + " " + file_en
 	subprocess.call(cmd,shell=True, stdout=f)
 	f.close()
 
