@@ -1,6 +1,6 @@
 # Alinio
 
-Er mwyn alinio testunau Cymraeg a Saesneg, rydym yn awgrymu eich bod chi'n defnyddio [hunalign](http://mokk.bme.hu/en/resources/hunalign/) fel gweler isod. 
+Er mwyn alinio testunau Cymraeg a Saesneg, rydym yn awgrymu eich bod chi'n defnyddio [hunalign](http://mokk.bme.hu/en/resources/hunalign/) fel y gwelir isod. 
 Mae hunalign yn rhaglen ar ffurf gorchmynion terfynnell. 
 
 Os oes well gennych chi ddefnyddio rhaglen gyda rhyngwyneb, mae [LF Aligner](http://aligner.sourceforge.net/) yn ddewis da ar gyfer Windows.
@@ -27,7 +27,7 @@ Cyn cychwyn alinio, bydd angen 3 peth:
  $ sudo pip install -U nltk
  ```
 
- * Gosod ffeil `.dic` ar gyfer hunalign a ddarparir gennym ni:
+ * Gosod ffeil `.dic` ar gyfer hunalign a ddarperir gennym ni:
 
 ```sh
  $ wget http://techiaith.org/alinio/hunalign/cy-en.dic -O hunalign-1.1/data/cy-en.dic
