@@ -7,7 +7,7 @@ Os oes well gennych chi ddefnyddio rhaglen gyda rhyngwyneb, mae [LF Aligner](htt
 
 ### Gosod y Meddalwedd Alinio
 
-Mae'r project yma yn cynnwys cod Python sy'n hwyluso defnyddio hunalign o fewn terfynnell.  
+Mae'r project yma yn cynnwys cod Python sy'n hwyluso defnydd hunalign o fewn terfynnell.  
 
 Cyn cychwyn alinio, bydd angen 3 peth:
 
