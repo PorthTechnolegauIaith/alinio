@@ -1,6 +1,6 @@
 # Alinio
 
-Er mwyn alinio testunau Cymraeg a Saesneg, rydym yn awgrymu eich bod chi'n defnyddio [hunalign](http://mokk.bme.hu/en/resources/hunalign/) fel gweler isod. 
+Er mwyn alinio testunau Cymraeg a Saesneg, rydym yn awgrymu eich bod chi'n defnyddio [hunalign](http://mokk.bme.hu/en/resources/hunalign/) fel y gwelir isod. 
 Mae hunalign yn rhaglen ar ffurf gorchmynion terfynnell. 
 
 Os oes well gennych chi ddefnyddio rhaglen gyda rhyngwyneb, mae [LF Aligner](http://aligner.sourceforge.net/) yn ddewis da ar gyfer Windows.
@@ -128,5 +128,4 @@ Pa Wasanaethau API sydd ar gael?        What API Services are available?        
 
 
 ### LFAligner Tutorial
-
 See the file [LFAligner](tut/LFAligner.md) for more information.
